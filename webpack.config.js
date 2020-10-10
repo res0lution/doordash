@@ -2,17 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
 module.exports = (env, options) => {
   const isProduction = options.mode === 'production';
   const publicDir = '/';
 
   return {
-    entry: `${path.join(__dirname, "./src")}/js`,
+    entry: `${path.join(__dirname, './src')}/js`,
     output: {
-      filename: "js/[name].[hash].js",
-      path: path.join(__dirname, "./build"),
+      filename: 'js/[name].[hash].js',
+      path: path.join(__dirname, './build'),
       publicPath: publicDir,
     },
     module: {
@@ -24,14 +23,14 @@ module.exports = (env, options) => {
               loader: MiniCssExtractPlugin.loader,
             },
             {
-              loader: "css-loader",
+              loader: 'css-loader',
             },
             {
-              loader: "sass-loader",
+              loader: 'sass-loader',
               options: {
                 sourceMap: true,
                 sassOptions: {
-                  includePaths: [path.join(__dirname, "src")],
+                  includePaths: [path.join(__dirname, 'src')],
                 },
               },
             },
@@ -39,38 +38,38 @@ module.exports = (env, options) => {
         },
         {
           test: /\.(png|jpg|gif|svg)$/,
-          loader: "file-loader",
+          loader: 'file-loader',
           exclude: [/fonts/, /static/],
           options: {
-            name: "./img/[name].[ext]",
-            publicPath: "../",
+            name: './img/[name].[ext]',
+            publicPath: '../',
           },
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2)$/,
           exclude: [/components/, /img/, /static/],
           use: {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "./fonts/[name].[ext]",
-              publicPath: "../",
+              name: './fonts/[name].[ext]',
+              publicPath: '../',
             },
           },
         },
         {
           test: /\.js$/,
-          loader: "babel-loader",
-          exclude: "/node_modules/",
+          loader: 'babel-loader',
+          exclude: '/node_modules/',
         },
         {
           test: /\.(svg|png|ico|xml|json)$/,
           exclude: [/fonts/, /components/, /img/, /node_modules/],
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                name: "./[name].[ext]",
-                publicPath: "../",
+                name: './[name].[ext]',
+                publicPath: '../',
               },
             },
           ],
@@ -82,16 +81,16 @@ module.exports = (env, options) => {
       splitChunks: {
         cacheGroups: {
           vendor: {
-            name: "vendors",
+            name: 'vendors',
             test: /node_modules/,
-            chunks: "all",
+            chunks: 'all',
             enforce: true,
           },
         },
       },
     },
     devServer: {
-      contentBase: "./build",
+      contentBase: './build',
       port: 3000,
       overlay: {
         warnings: true,
@@ -101,17 +100,17 @@ module.exports = (env, options) => {
         ignored: /node_modules/,
       },
     },
-    devtool: isProduction ? false : "eval-sourcemap",
+    devtool: isProduction ? false : 'eval-sourcemap',
     plugins: [
       Autoprefixer,
 
       new MiniCssExtractPlugin({
-        filename: "./css/[name].[hash].css",
+        filename: './css/[name].[hash].css',
       }),
 
       new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: "./src/index.html",
+        filename: 'index.html',
+        template: './src/index.html',
       }),
     ],
   };
