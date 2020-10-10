@@ -1,0 +1,88 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* SIGN UP */
+/* ----------------------------------------------- */
+
+.plans {
+  background-color: $alt-background;
+
+  &__box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px #efefef;
+    margin-left: 5%;
+    transition-duration: 0.3s;
+    width: 90%;
+
+    @media only screen and (max-width: $large-tablet) {
+      margin-left: 0%;
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      margin-bottom: 30px;
+      h3,
+      .plan__price,
+      .plan__price-meal {
+        text-align: center;
+      }
+    }
+
+    div {
+      border-bottom: 1px solid #e8e8e8;
+      padding: 15px;
+
+      &:first-child {
+        background-color: #fcfcfc;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      &:last-child {
+        border: 0;
+        text-align: center;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 4px 4px #d8d5d5;
+      transform: scale(1.05);
+    }
+  }
+
+  .fa-check-circle {
+    color: #22dd5a;
+  }
+
+  .fa-times-circle {
+    color: rgb(199, 25, 25);
+  }
+
+  &__price {
+    color: $primary;
+    font-size: 300%;
+    font-weight: 100;
+    margin-bottom: 10px;
+
+    @media only screen and (max-width: $large-tablet) {
+      font-size: 250%;
+    }
+
+    span {
+      font-size: 30%;
+      font-weight: 300;
+    }
+  }
+
+  &__price-meal {
+    font-size: 80%;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: 5px 0;
+    }
+  }
+}

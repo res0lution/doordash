@@ -1,0 +1,78 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* FORM */
+/* ----------------------------------------------- */
+
+form {
+  margin: 0 auto;
+  width: 60%;
+
+  @media only screen and (max-width: $large-tablet) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+
+    .row {
+      margin: 10px 0;
+    }
+
+    .form__fix {
+      text-align: center;
+    }
+  }
+
+  input[name="name"],
+  input[type="email"],
+  &__select,
+  textarea {
+    border-radius: 6px;
+    border: 2px solid $secondary;
+    padding: 7px;
+    transition-duration: 0.3s;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: $primary-effect;
+    }
+  }
+
+  &__select {
+    padding: 0;
+  }
+
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  input[type="checkbox"] {
+    margin: 10px 5px 10px 0;
+    display: none;
+
+    & + label {
+      &::before {
+        content: "\f096";
+        display: inline-block;
+        font-family: FontAwesome;
+        letter-spacing: 10px;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &:checked {
+      & + label {
+        &::before {
+          content: "\f046";
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .col {
+    padding: 5px 0;
+  }
+}

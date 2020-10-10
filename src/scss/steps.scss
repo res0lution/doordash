@@ -1,0 +1,118 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* HOW IT WORKS SECTION */
+/* ----------------------------------------------- */
+
+.steps {
+  background-color: $alt-background;
+
+  &__box {
+    margin-top: 30px;
+
+    &:first-child {
+      padding-right: 3%;
+      text-align: right;
+    }
+
+    &:last-child {
+      margin-top: 70px;
+      padding-left: 3%;
+      text-align: left;
+    }
+
+    @media only screen and (max-width: $large-tablet) {
+      margin-top: 10px;
+
+      &:last-child {
+        margin-top: 10px;
+      }
+    }
+
+    @media only screen and (max-width: $tablet) {
+      &:first-child {
+        text-align: center;
+      }
+    }
+  }
+
+  .steps__app-screen {
+    width: 40%;
+
+    @media only screen and (max-width: $large-tablet) {
+      width: 50%;
+    }
+
+    @media only screen and (max-width: $tablet) {
+      width: 40%;
+    }
+  }
+
+  .steps__item {
+    margin-bottom: 50px;
+
+    &:last-of-type {
+      margin-bottom: 80px;
+    }
+
+    div {
+      border: 2px solid $primary;
+      border-radius: 50%;
+      color: $primary;
+      display: inline-block;
+      font-size: 150%;
+      float: left;
+      height: 54px;
+      margin-right: 25px;
+      padding: 5px;
+      text-align: center;
+      width: 54px;
+
+      @media only screen and (max-width: $tablet) {
+        height: 40px;
+        font-size: 120%;
+        margin-right: 15px;
+        padding: 4px;
+        width: 40px;
+      }
+    }
+
+    @media only screen and (max-width: $large-tablet) {
+      margin-bottom: 40px;
+
+      &:last-of-type {
+        margin-bottom: 60px;
+      }
+    }
+
+    @media only screen and (max-width: $tablet) {
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .btn_app {
+    border: none;
+    img {
+      height: 50px;
+      margin-right: 10px;
+      transition-duration: 0.3s;
+      width: auto;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    @media only screen and (max-width: $mobile) {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .steps__btns {
+    text-align: center;
+  }
+}

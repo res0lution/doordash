@@ -1,0 +1,284 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* HEADER */
+/* ----------------------------------------------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999999999;
+
+  &__logo {
+    fill: $contrast;
+    float: left;
+    height: 100px;
+    margin-top: 20px;
+    transition-duration: 0.3s;
+    width: auto;
+
+    &:hover {
+      fill: $primary !important;
+    }
+  }
+
+  &__main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+
+    @media only screen and (max-width: 1023px) {
+      margin-top: 25px;
+    }
+
+    @media only screen and (max-width: 850px) {
+      float: none;
+      margin-top: -10px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      display: none;
+      float: left;
+      margin-top: 0;
+      margin-left: 25px;
+
+      &.open {
+        background: rgba(255, 255, 255, 0.98);
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        padding-bottom: 20px;
+        top: 0;
+        width: 100vw;
+
+        li a {
+          color: $secondary;
+          width: 80%;
+        }
+      }
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 40px;
+
+      @media only screen and (max-width: 767px) {
+        display: block;
+      }
+
+      a {
+        border-bottom: 2px solid transparent;
+        -webkit-transition: border-bottom 0.3s;
+        color: $contrast;
+        font-size: 90%;
+        padding: 8px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: border-bottom 0.3s, color 0.3s;
+
+        @media only screen and (max-width: 767px) {
+          display: block;
+          border: 0;
+          font-size: 100%;
+          padding: 10px 0;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: 2px solid $primary;
+          color: $primary !important;
+        }
+      }
+
+      @media only screen and (max-width: 1023px) {
+        float: none;
+        margin-top: 35px;
+
+        li {
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+
+  &__mobile-icon {
+    cursor: pointer;
+    display: none;
+    float: right;
+    margin-top: 30px;
+    position: relative;
+    z-index: 100;
+
+    @media only screen and (max-width: 767px) {
+      display: flex;
+      margin: 45px 0 auto 0;
+
+      .fa-times-circle {
+        bottom: 30px;
+        color: $secondary;
+        position: relative;
+      }
+    }
+
+    i {
+      color: $contrast;
+      font-size: 200%;
+    }
+  }
+}
+
+.hero-text-box {
+  left: 50%;
+  margin: 100px 180px;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 1140px;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 2%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    padding: 0 4%;
+
+    .btn {
+      display: none;
+    }
+  }
+}
+
+.title_special {
+  min-width: 796px !important;
+
+  @media only screen and (max-width: 767px) {
+    min-width: auto !important;
+  }
+}
+
+/* Sticky navi */
+.sticky {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 2px #efefef;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  .navbar {
+    &__main-nav {
+      margin-top: 40px;
+
+      @media only screen and (max-width: $large-tablet) {
+        margin-top: 0;
+      }
+
+      @media only screen and (max-width: 850px) {
+        float: none;
+        margin-top: -20px;
+        padding-bottom: 15px;
+      }
+
+      @media only screen and (max-width: $tablet) {
+        margin-top: 10px;
+
+        .navbar__mobile-icon {
+          .fa-times-circle {
+            position: static;
+          }
+        }
+      }
+
+      li a {
+        color: $secondary;
+
+        @media only screen and (max-width: $tablet) {
+          padding: 10px 0;
+        }
+      }
+    }
+
+    &__logo {
+      fill: $secondary;
+      margin-top: 0;
+    }
+
+    &__mobile-icon {
+      margin-top: 35px;
+
+      .fa-times-circle {
+        position: static;
+      }
+
+      i {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+.splide-slide {
+  position: none;
+  overflow: hidden;
+}
+
+.slide {
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  @media only screen and (max-width: $large-tablet) {
+    h1 {
+      max-width: 600px !important;
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: $mobile) {
+    h1 {
+      max-width: 300px !important;
+      text-align: center;
+    }
+  }
+}
+
+.slide-1 {
+  background-image: -webkit-linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(../img/burger.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/burger.jpg);
+}
+
+.slide-2 {
+  background-image: -webkit-linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(../img/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/hero.jpg);
+}
+
+.slide-3 {
+  background-image: -webkit-linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(../img/food_pizza.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/food_pizza.jpg);
+}

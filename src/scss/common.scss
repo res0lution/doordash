@@ -1,0 +1,281 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+
+  &-track {
+    background: #f1f1f1;
+  }
+
+  &-thumb {
+    background: $accent;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background: $primary;
+      border-radius: 6px;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  color: transparent;
+  font-size: 1px;
+  position: absolute;
+}
+
+html,
+body {
+  background-color: #fff;
+  color: $secondary;
+  font-family: "Roboto Slab", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: $large-tablet) {
+  body {
+    font-size: 18px;
+
+    @media only screen and (max-width: $tablet) {
+      font-size: 16px;
+    }
+  }
+}
+
+.clearfix {
+  zoom: 1;
+
+  &::after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+/* ----------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ----------------------------------------------- */
+
+.empasize {
+  color: $primary;
+  font-weight: bold;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  @media only screen and ($small-desktop) {
+    padding: 0 2%;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    padding: 0 4%;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .col {
+    width: 100%;
+    margin: 0 0 4% 0;
+  }
+}
+
+.section {
+  padding: 80px 0 !important;
+
+  @media only screen and (max-width: $large-tablet) {
+    padding: 60px 0 !important;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    padding: 30px 0 !important;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    padding: 25px 0 !important;
+  }
+}
+
+.box {
+  padding: 1%;
+}
+
+/* ----- HEADINGS ----- */
+.title {
+  font-weight: 300;
+  text-transform: uppercase;
+
+  &_h1 {
+    color: $contrast;
+    font-size: 240%;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    word-spacing: 4px;
+
+    @media only screen and (max-width: $tablet) {
+      font-size: 180%;
+    }
+  }
+
+  &_h2 {
+    font-size: 180%;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+    word-spacing: 2px;
+
+    @media only screen and (max-width: $tablet) {
+      font-size: 150%;
+    }
+
+    &::after {
+      background-color: $primary;
+      content: " ";
+      display: block;
+      height: 2px;
+      margin: 0 auto;
+      margin-top: 30px;
+      width: 100px;
+    }
+  }
+
+  &_h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+  }
+
+  min-width: auto;
+}
+
+/* ----- PARAGRAPHS ----- */
+
+.long-copy {
+  line-height: 145%;
+  margin-left: 15%;
+  width: 70%;
+
+  @media only screen and (max-width: $large-tablet) {
+    margin-left: 10%;
+    width: 80%;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.box {
+  p {
+    font-size: 90%;
+    line-height: 145%;
+  }
+}
+
+/* ----- ICONS ----- */
+.icon-big {
+  display: block;
+  color: $primary;
+  font-size: 350%;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  color: $primary;
+  display: inline-block;
+  font-size: 120%;
+  line-height: 120%;
+  margin: -5px 10px 0 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 30px;
+
+  @media only screen and (max-width: $large-tablet) {
+    margin-right: 5px;
+    width: 17px;
+  }
+}
+
+/* ----- LINKS ----- */
+
+.link {
+  border-bottom: 1px solid $primary;
+  -webkit-transition: border-bottom 0.3s, color 0.3s;
+  color: $primary;
+  padding-bottom: 1px;
+  text-decoration: none;
+  transition: border-bottom 0.3s, color 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid transparent;
+    color: $secondary;
+  }
+}
+
+/* ----- BUTTONS ----- */
+.btn {
+  border-radius: 200px;
+  -webkit-transition: background-color 0.3s, border 0.3s, color 0.3s;
+  display: inline-block;
+  font-weight: 300;
+  padding: 10px 30px;
+  text-decoration: none;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+
+  &_submit {
+    border: none;
+    background: $primary;
+    color: $contrast;
+  }
+
+  &_full {
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: $contrast;
+    margin-right: 15px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid $primary-effect;
+    }
+  }
+
+  &_ghost {
+    border: 1px solid $primary;
+    color: $primary;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid $primary-effect;
+      color: $contrast;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $primary-effect;
+  }
+}

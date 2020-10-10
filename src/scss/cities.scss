@@ -1,0 +1,23 @@
+@import "vars";
+
+/* ----------------------------------------------- */
+/* CITIES */
+/* ----------------------------------------------- */
+
+.box {
+  img {
+    height: auto;
+    margin: 25px 0;
+    width: 100%;
+  }
+}
+
+.city__feature {
+  margin-bottom: 5px;
+
+  @media only screen and ($large-tablet) {
+    font-size: 90%;
+  }
+}
+
+

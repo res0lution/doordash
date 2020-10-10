@@ -1,0 +1,105 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------- */
+
+.footer {
+  background-color: #333;
+  font-size: 80%;
+  padding: 50px;
+
+  @media only screen and (max-width: $mobile) {
+    align-items: center;
+    display: flex;
+    font-size: 150%;
+    flex-direction: column;
+    float: none;
+  }
+
+  .row {
+    @media only screen and (max-width: $mobile) {
+      align-items: center;
+      display: flex;
+      font-size: 16px;
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    float: left;
+    list-style: none;
+  }
+
+  &__social-links {
+    float: right;
+    list-style: none;
+
+    li a {
+      font-size: 160%;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      display: flex;
+      font-size: 100%;
+      float: none;
+      justify-content: center;
+    }
+  }
+
+  &__social-links,
+  &__nav {
+    li {
+      display: inline-block;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        border: 0;
+        color: $accent;
+        text-decoration: none;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: #ddd;
+        }
+      }
+    }
+  }
+
+  .fa-facebook-square:hover,
+  .fa-facebook-square:focus {
+    color: #3b5998;
+  }
+
+  .fa-twitter-square:hover,
+  .fa-twitter-square:focus {
+    color: #00aced;
+  }
+
+  .fa-google-plus-square:hover,
+  .fa-google-plus-square:focus {
+    color: #dd4b39;
+  }
+
+  .fa-instagram-square:hover,
+  .fa-instagram-square:focus {
+    color: #517fa4;
+  }
+
+  p {
+    color: $accent;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer__social-links i:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.1);
+  }
+}

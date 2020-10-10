@@ -1,0 +1,47 @@
+@import "vars";
+/* ----------------------------------------------- */
+/* TESTIMONIALS */
+/* ----------------------------------------------- */
+
+.testimonials {
+  background-image: -webkit-linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(../img/back-customers.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../img/back-customers.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: $contrast;
+}
+
+blockquote {
+  font-style: italic;
+  line-height: 145%;
+  margin-top: 40px;
+  position: relative;
+  padding: 2%;
+
+  &::before {
+    content: "\201C";
+    display: block;
+    font-size: 500%;
+    left: -5px;
+    position: absolute;
+    top: -5px;
+  }
+}
+
+cite {
+  display: block;
+  font-size: 90%;
+  margin-top: 25px;
+
+  img {
+    border-radius: 50%;
+    height: 45px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}

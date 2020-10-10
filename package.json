@@ -1,0 +1,47 @@
+{
+  "name": "doordash",
+  "version": "1.2.1",
+  "description": "Doordash landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server  --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Res01uti0n/sma-landing-page.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "webpack",
+    "js",
+    "sass"
+  ],
+  "author": "res01uti0n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Res01uti0n/sma-landing-page/issues"
+  },
+  "homepage": "https://github.com/Res01uti0n/sma-landing-page#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "autoprefixer": "^10.0.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.4.1",
+    "mini-css-extract-plugin": "^0.11.2",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
